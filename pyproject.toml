@@ -1,0 +1,21 @@
+[project]
+name = "gr-lora-cli"
+version = "0.2.0"
+description = "LoRaWAN signal decoder using gr-lora_sdr and RTL-SDR"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24,<2",
+    "cryptography>=41.0",
+]
+
+# System dependencies (not pip-installable):
+#   - GNU Radio (gnuradio): https://wiki.gnuradio.org/index.php/InstallingGR
+#   - gr-lora_sdr: https://github.com/tapparelj/gr-lora_sdr
+#   - gr-osmosdr (for live RTL-SDR): apt install gr-osmosdr
+
+[project.scripts]
+gr-lora-cli = "gr_lora_cli.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
